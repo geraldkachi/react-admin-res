@@ -21,7 +21,7 @@ const AdminLayOut = () => {
       <Sidebar />
       <div className="main">
         <div className="main-content">
-          <Navbar />
+          {/* <Navbar /> */}
           <Outlet />
           <i className="fa fa-taxi"></i>
         </div>
