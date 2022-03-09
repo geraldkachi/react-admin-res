@@ -7,7 +7,10 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
-
+import "font-awesome/css/font-awesome.min.css"
+// import { config } from '@fortawesome/fontawesome-svg-core'
+// import '@fortawesome/fontawesome-svg-core/styles.css'
+// config.autoAddCss = false
 
 ReactDOM.render(
   <React.StrictMode>

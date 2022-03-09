@@ -10,17 +10,32 @@ import {
 import Home from "../src/CrudContext/Home"
 import EditUser from './CrudContext/EditUser';
 import AddUser from './CrudContext/AddUser';
+import ErrorPage from './ErrorPage';
+import AdminLayOut from './admin-dashboard/AdminLayOut';
+import Dashboard from './admin-dashboard/components/Dashboard';
+import Blank from './admin-dashboard/components/Blank';
 
 function App() {
 
   return (
     <>
       <div className="App">
-        <div style={{ maxWidth: '30rem', margin: "4rem auto" }}>
+        <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<AdminLayOut />}>
+              <Route index element={<Dashboard />} />
+              <Route path="riders" element={<Blank />} />
+              <Route path="payments" element={<Blank />} />
+              <Route path="learning-center" element={<Blank />} />
+              <Route path="settings" element={<Blank />} />
+              <Route path="faqs" element={<Blank />} />
+              <Route path="" element={<Blank />} />
+            </Route>
+
+            {/* <Route path="/" element={<Home />} />
             <Route path="/edit/:id" element={<EditUser />} />
-            <Route path="/add" element={<AddUser />} />
+            <Route path="/add" element={<AddUser />} /> */}
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
         {/* <div className="btn btn-primary">Button</div> */}
