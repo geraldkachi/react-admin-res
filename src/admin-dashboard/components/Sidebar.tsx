@@ -11,7 +11,7 @@ import { BsFillChatTextFill } from "react-icons/bs";
 import { Link, useLocation } from 'react-router-dom'
 import styled from "styled-components"
 import sidebardata from '../data./sidebardata'
-// import ScrollReveal from 'scrollreveal'
+import ScrollReveal from 'scrollreveal/package.json'
 
 const iconarr = [
   <MdSpaceDashboard />,

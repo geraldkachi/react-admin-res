@@ -48,8 +48,8 @@ const Section = styled.div`
     overflow: hidden;
     border-radius: 20rem;
     img {
-      height: 10rem;
-      width: 10rem;
+      height: 8rem;
+      width: 8rem;
       object-fit: cover;
       border-radius: 20rem;
       transition: 0.5s ease-in-out;
@@ -77,6 +77,11 @@ const Section = styled.div`
     gap: 1rem;
     .container {
       text-align: center;
+      p {
+        font-size: .9rem;
+        font-weight: bold;
+        display: flex;
+      }
     }
   }
 `;

@@ -8,7 +8,7 @@ import { cardStyle } from './ReusableStyles'
 
 const faqs = [
   {
-    icos: <AiFillCalendar />,
+    icon: <AiFillCalendar />,
     text: "How to manage time and get god marks for trips"
   },
   {
