@@ -29,7 +29,7 @@ const FAQ = () => {
       </div>
       <div className="faqs">
         {faqs.map(item => (
-          <div className="faq">
+          <div className="faq" key={item.text}>
             <div className="info">
               {item.icon}
               <h6>{item.text}</h6>
@@ -50,7 +50,7 @@ ${cardStyle}
 .title{
   h4{
     color: #ffc107;
-    letter-spacing: normal.3rem;
+    letter-spacing: .3rem;
     font-family: "Permanent Marker", cursive;
   }
 }
@@ -68,6 +68,9 @@ ${cardStyle}
       display: flex;
       gap: 1rem;
       align-items: center;
+      h6 {
+        font-size: .9rem;
+      }
     }
     svg {
       font-size: 1.4rem;
@@ -79,4 +82,9 @@ ${cardStyle}
     }
   }
 }
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+    svg {
+      font-size: 2rem !important;
+    }
+  }
 `

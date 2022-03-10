@@ -11,6 +11,7 @@ import { BsFillChatTextFill } from "react-icons/bs";
 import { Link, useLocation } from 'react-router-dom'
 import styled from "styled-components"
 import sidebardata from '../data./sidebardata'
+import ScrollReveal from 'scrollreveal'
 
 const iconarr = [
   <MdSpaceDashboard />,
@@ -25,6 +26,39 @@ const Sidebar = () => {
 
   const [avtivelink, setActiveLink] = useState<number>(0)
   const location = useLocation()
+
+  const [currentLink, setCurrentLink] = useState(1);
+    const [navbarState, setNavbarState] = useState(false);
+
+    const html = document.querySelector("html");
+    html.addEventListener("click", () => setNavbarState(false));
+  
+    useEffect(() => {
+      const sr = scrollreveal({
+        origin: "left",
+        distance: "80px",
+        duration: 1000,
+        reset: false,
+      });
+  
+      sr.reveal(
+        `
+            .brand,
+            .links>ul>li:nth-of-type(1),
+        .links>ul>li:nth-of-type(2),
+        .links>ul>li:nth-of-type(3),
+        .links>ul>li:nth-of-type(4),
+        .links>ul>li:nth-of-type(5),
+        .links>ul>li:nth-of-type(6),
+        .logout
+        `,
+        {
+          opacity: 0,
+          interval: 300,
+        }
+      );
+    }, []);
+  
 
   useEffect(() => {
       const curPath = window.location.pathname.split('/')[1]
@@ -198,6 +232,54 @@ const Section = styled.div`
     }
   }
 `
+
+
+const ResponsiveNav = styled.div`
+  position: fixed;
+  right: -10vw;
+  top: 0;
+  z-index: 10;
+  background-color: black;
+  height: 100vh;
+  width: ${({ state }: any) => (state ? "60%" : "0%")};
+  transition: 0.4s ease-in-out;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  padding: 1rem;
+  .responsive__links {
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 3rem;
+      li {
+        padding: 0.6rem 1rem;
+        border-radius: 0.6rem;
+        &:hover {
+          background-color: #ffc107;
+          a {
+            color: black;
+          }
+        }
+        a {
+          text-decoration: none;
+          display: flex;
+          gap: 1rem;
+          color: white;
+        }
+      }
+      .active {
+        background-color: #ffc107;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+`;
+
 /////////////////////////////////////////////////////////////////
 
 

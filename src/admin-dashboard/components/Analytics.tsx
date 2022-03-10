@@ -12,7 +12,7 @@ const Analytics = () => {
       <div className="analytic">
         <div className="content">
           <h6>Spent this month</h6>
-          <h4>1682.5</h4>
+          <h5>1682.5</h5>
         </div>
         <div className="logo">
           <BsFillCalendar2WeekFill />
@@ -22,7 +22,7 @@ const Analytics = () => {
       <div className="analytic">
         <div className="content">
           <h6>Spent this month</h6>
-          <h4>1682.5</h4>
+          <h5>1682.5</h5>
         </div>
         <div className="logo">
           <IoStatsChart />
@@ -35,7 +35,7 @@ const Analytics = () => {
         </div>
         <div className="content">
           <h6>Spent this month</h6>
-          <h4>1682.5</h4>
+          <h5>1682.5</h5>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ const Analytics = () => {
         </div>
         <div className="content">
           <h6>Spent this month</h6>
-          <h4>1682.5</h4>
+          <h5>1682.5</h5>
         </div>
       </div>   
     </Section>
@@ -73,14 +73,19 @@ const Section = styled.div`
     svg {
       color: #fff;
     }
+    .content{
+      h6 {
+        font-size: .9rem !important;
+      }
+    }
   }
   .logo {
     background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 3rem;
-    padding: 1.5rem;
+    border-radius: 2rem;
+    padding: 1rem;
       svg {
         font-size: 1.5rem;
       }

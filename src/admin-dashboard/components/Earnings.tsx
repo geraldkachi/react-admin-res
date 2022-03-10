@@ -10,8 +10,8 @@ const Earnings = () => {
     <Section>
       <div className="top">
         <div className="info">
-          <h5>This month earnings</h5>
-          <h1>$682.5</h1>
+          <h6>This month earnings</h6>
+          <h5>$682.5</h5>
           <div className="growth">
             <span>+2.45%</span>
           </div>
@@ -57,8 +57,8 @@ const Section = styled.section`
       flex-direction: column;
       align-items: center;
       gap: 0.2rem;
-      h1 {
-        font-size: 2rem;
+      h4 {
+        font-size: .6rem;
       }
       .growth {
         background-color: #d7e41e1d;

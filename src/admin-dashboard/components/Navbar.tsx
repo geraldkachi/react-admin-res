@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <Nav>
       <div className="title">
-        <h4>Hi Gerald Kachi</h4>
-        <h2>Welcome to <span>MY TAXI DASHBOARD</span></h2>
+        <h5>Hi Gerald Kachi</h5>
+        <h4>Welcome to <span>MY TAXI DASHBOARD</span></h4>
       </div>
       <div>
 
@@ -28,7 +28,7 @@ const Nav = styled.div`
   color: #fff;
   
   .title {
-    h2 {
+    h4 {
       span {
         margin-left: .5rem;
         color: #ffc107;
