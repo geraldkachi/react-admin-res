@@ -1,9 +1,7 @@
 import { 
   // createAsyncThunk, 
   createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState
-  // , AppThunk 
-} from '../../../../redux-crud/src/app/store';
+import { RootState , AppThunk } from '../../../../redux-crud/src/app/store';
 import { UserDataProps, UsersData } from './fetchData';
 
 export interface CounterState {
@@ -42,6 +40,8 @@ export const userSlice = createSlice({
 
 export const { addUser, deleteUser, updateUsername } = userSlice.actions;
 
-export const selectUserList = (state: RootState) => state.users.value
+// export const selectUserList = (state: RootState) => state.users.value
+
+export const selectUserList = (state: any) => state.users.value
 
 export default userSlice.reducer
