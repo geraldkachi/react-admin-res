@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <Section>
       <div className="image">
-        <img src={"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"} alt="image" />
+        <img src={"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"} alt="profile" />
       </div>
       <div className="title">
         <h4>Gerald Kachi</h4>
