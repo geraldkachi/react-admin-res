@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-// import { useAppDispatch, useAppSelector } from '../../../../redux-crud/src/app/hooks';
-// import { RootState } from '../../../../redux-crud/src/app/store';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addUser, deleteUser, selectUserList, updateUsername } from './userSlice';
-// import { RootState } from './app/store';
-// import { useAppDispatch, useAppSelector } from './app/hooks';
 // import { addUser, selectUserList } from './features/users/userSlice';
 import "./user.css"
 
@@ -13,13 +9,12 @@ const User = () => {
     const [name, setName] = useState("")
     const [username, setUsername] = useState("")
     const [newusername, setNewUserName] = useState("")
-    // const users = useAppSelector(selectUserList)
-    // const dispatch = useAppDispatch()
+    const users = useAppSelector(selectUserList)
+    const dispatch = useAppDispatch()
 
-    // const users = useSelector((state: RootState ) => state.users.value)
-    const users = useSelector(selectUserList)
+    // const users = useSelector(selectUserList)
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)
 

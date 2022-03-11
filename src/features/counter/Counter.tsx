@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// import { useAppSelector, useAppDispatch } from './../../app/hooks';
+import { useAppSelector, useAppDispatch } from './../../app/hooks';
 import {
   decrement,
   increment,
@@ -10,14 +10,10 @@ import {
   selectCount,
 } from './counterSlice';
 import styles from './Counter.module.css';
-import { useDispatch, useSelector } from 'react-redux';
 
 export function Counter() {
-  const dispatch = useDispatch()
-  const count = useSelector(selectCount)
-
-  // const count = useAppSelector(selectCount);
-  // const dispatch = useAppDispatch();
+  const count = useAppSelector(selectCount);
+  const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;

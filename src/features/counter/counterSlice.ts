@@ -72,7 +72,7 @@ export const selectCount = (state: RootState) => state.counter.value;
 export const incrementIfOdd = (amount: number): AppThunk => (
   dispatch,
   getState
-): any => {
+) => {
   const currentValue: any = selectCount(getState());
   if (currentValue % 2 === 1) {
     dispatch(incrementByAmount(amount));

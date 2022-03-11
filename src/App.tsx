@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import User from './features/users/User';
 import './App.css';
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import Home from "../src/CrudContext/Home"
-import EditUser from './CrudContext/EditUser';
-import AddUser from './CrudContext/AddUser';
+import { Routes, Route } from "react-router-dom";
+// import { Counter } from './features/counter/Counter';
+// import User from './features/users/User';
+// import Home from "../src/CrudContext/Home"
+// import EditUser from './CrudContext/EditUser';
+// import AddUser from './CrudContext/AddUser';
 import ErrorPage from './ErrorPage';
 import AdminLayOut from './admin-dashboard/AdminLayOut';
 import Dashboard from './admin-dashboard/components/Dashboard';
