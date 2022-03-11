@@ -1,6 +1,10 @@
-import {  createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../../../redux-crud/src/app/store';
-import { UserDataProps, UsersData } from '../../../../redux-crud/src/fetchData';
+import { 
+  // createAsyncThunk, 
+  createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState
+  // , AppThunk 
+} from '../../../../redux-crud/src/app/store';
+import { UserDataProps, UsersData } from './fetchData';
 
 export interface CounterState {
   value: Array<UserDataProps>;
