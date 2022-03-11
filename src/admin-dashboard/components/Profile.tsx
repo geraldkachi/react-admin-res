@@ -1,7 +1,7 @@
 import React from 'react'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import styled from 'styled-components'
-import images from '../contants/images'
+// import images from '../contants/images'
 import { cardStyle } from './ReusableStyles'
 
 const Profile = () => {
