@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Analytics from './Analytics'
 import Earnings from './Earnings'
@@ -32,6 +31,9 @@ const Section = styled.div`
   margin-left: 18vw;
   padding: 2rem;
   height: 100%;
+    @media screen and (max-width: 1080px) {
+      margin-left: unset;
+    }
 
   .grid {
     display: flex;
@@ -39,6 +41,7 @@ const Section = styled.div`
     height: 100%;
     gap: 1rem;
     margin-top: 2rem;
+    
      
     .row__one {
       display: grid;
@@ -52,9 +55,21 @@ const Section = styled.div`
     .row__two {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      height: 50%;
+      min-height: 30%;
       gap: 1rem;
-      
+      @media screen and (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
   }
+
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+      margin-left: unset;
+      .grid {
+        .row__one, .row__two {
+            grid-template-columns: 1fr;
+        }
+      }
+    }
+
 `

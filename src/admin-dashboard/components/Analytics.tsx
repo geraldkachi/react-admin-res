@@ -92,9 +92,14 @@ const Section = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
       .analytic {
         /* margin: 2rem; */
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
+          flex-direction: row-reverse;
+          
+        }
       }
   }
 `

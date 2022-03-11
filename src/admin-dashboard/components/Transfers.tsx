@@ -33,7 +33,7 @@ export default function Transfers() {
       <div className="transactions">
         {transactions.map((transaction) => {
           return (
-            <div className="transaction">
+            <div className="transaction" key={transaction.name}>
               <div className="transaction__title">
                 <div className="transaction__title__image">
                   <img src={transaction.image} alt="" />

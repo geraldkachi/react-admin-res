@@ -8,14 +8,13 @@ const Navbar = () => {
       <div className="title">
         <h5>Hi Gerald Kachi</h5>
         <h4>Welcome to <span>MY TAXI DASHBOARD</span></h4>
-      </div>
-      <div>
+      </div>      
 
+      
         <div className="search">
           <BiSearch />
           <input type="text" placeholder="Search..." />
-        </div>
-      </div>
+        </div>      
     </Nav>
   )
 }
@@ -62,4 +61,21 @@ const Nav = styled.div`
       }
     }
   }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+      flex-flow: column;    
+      .title {
+        h1 {
+          span {
+            display: block;
+            margin: 1rem 0;
+          }
+        }
+      }
+
+      .search {
+        width: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+      }
+  }
+
 `

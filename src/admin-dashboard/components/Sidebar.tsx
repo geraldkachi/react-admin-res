@@ -27,7 +27,6 @@ const Sidebar = () => {
   const [avtivelink, setActiveLink] = useState<number>(0)
   const location = useLocation()
 
-  const [currentLink, setCurrentLink] = useState(1);
     const [navbarState, setNavbarState] = useState(false);
 
     const html: HTMLHtmlElement | null | any = document.querySelector("html");
@@ -75,7 +74,18 @@ const Sidebar = () => {
             <FaTaxi />
             <span>MY TAXI</span>
           </div>
-          <div className="toggle"></div>
+          <div className="toggle">
+            {navbarState ? (
+              <VscChromeClose onClick={() => setNavbarState(false)} />
+            ) : (
+              <GiHamburgerMenu
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setNavbarState(true);
+                }}
+              />
+            )}
+          </div>
           {/* <div className="link-a">
             {sidebardata.map((item, index) =>
               <Link to={item.link} key={`nav-${index}`} className={`${avtivelink === index && 'active'}`}>
@@ -108,6 +118,33 @@ const Sidebar = () => {
           </Link>
         </div>
       </Section>
+      <ResponsiveNav 
+      state={navbarState} className={navbarState ? "show" : ""}
+      >
+         {/* <div className="link-a">
+            {sidebardata.map((item, index) =>
+              <Link to={item.link} key={`nav-${index}`} className={`${avtivelink === index && 'active'}`}>
+                <div className="icons">{item.icon}</div>
+                <div>{iconarr[index]}</div>
+                <div className="text">{item.text}</div>
+              </Link>
+            )}
+          </div> */}
+
+          <div className="responsive__links">
+            <ul>
+              {sidebardata.map((item, index) =>
+                <li key={`nav-${index}`} className={`${avtivelink === index && 'active'}`}>
+                  <Link to={item.link} >
+                    {/* <div className="icons">{item.icon}</div> */}
+                    <div>{iconarr[index]}</div>
+                    <div className="text">{item.text}</div>
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>
+      </ResponsiveNav>
     </>
   )
 }
@@ -231,22 +268,56 @@ const Section = styled.div`
       color: white;
     }
   }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    position: initial;
+    width: 100%;   
+    height: max-content;
+    padding: 1rem;
+    .top {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      .toggle {
+        display: block;
+        color: white;
+        z-index: 99;
+        svg {
+          font-size: 1.4rem;
+        }
+      }
+      .brand {
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+    }
+    .top > .links,
+    .logout {
+      display: none;
+    }
+  }
 `
 
 
-const ResponsiveNav = styled.div`
+const ResponsiveNav: any = styled.div`
   position: fixed;
   right: -10vw;
   top: 0;
   z-index: 10;
   background-color: black;
   height: 100vh;
-  width: ${({ state }: any) => (state ? "60%" : "0%")};
+  width: ${({ state }: any) => (state ? "30%" : "0%")};
   transition: 0.4s ease-in-out;
   display: flex;
   opacity: 0;
   visibility: hidden;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
+  @media screen and (max-width: 800px) {
+    width: ${({ state }: any) => (state ? "60%" : "0%")};
+  }
+  @media screen and (min-width: 1080px) {
+    display: none;
+  }
   .responsive__links {
     ul {
       list-style-type: none;
@@ -277,7 +348,7 @@ const ResponsiveNav = styled.div`
         }
       }
     }
-  }
+  } 
 `;
 
 /////////////////////////////////////////////////////////////////
