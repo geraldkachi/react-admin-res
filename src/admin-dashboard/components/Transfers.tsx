@@ -1,8 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import avatarImage from "../assets/avatarImage.jpeg";
+// import avatarImage from "../assets/avatarImage.jpeg";
 import { cardStyle } from "./ReusableStyles";
+import { Link } from "react-router-dom";
 
 export default function Transfers() {
   const transactions = [
@@ -50,9 +50,9 @@ export default function Transfers() {
           );
         })}
       </div>
-      <a className="view" href="#">
+      <Link className="view" to="">
         View all <HiArrowNarrowRight />
-      </a>
+      </Link>
     </Section>
   );
 }
@@ -145,3 +145,4 @@ const Section = styled.section`
     }
   }
 `;
+
